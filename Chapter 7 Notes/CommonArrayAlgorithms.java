@@ -22,6 +22,10 @@ public class CommonArrayAlgorithms
      */
     public static void printArray( int[] array )
     {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.println(array[i] + "\n");
+        }
         System.out.println( Arrays.toString( array ));
     }
     
@@ -60,6 +64,11 @@ public class CommonArrayAlgorithms
      */
     public static void printElementSeparators()
     {
+        String[] ranArr = new String[100];
+        for (int i = 0; i < ranArr.length; i++)
+        {
+            System.out.println(array[i] + "|");
+        }
     }
 
     /*
@@ -70,6 +79,11 @@ public class CommonArrayAlgorithms
      */
     public static void linearSearch( int valueToFind )
     {
+        String[] ranArr = new String[100];
+        for (int i = 0; i < ranArr.length; i++)
+        {
+            
+        }
     }
 
     /*

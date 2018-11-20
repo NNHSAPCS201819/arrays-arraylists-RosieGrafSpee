@@ -23,4 +23,13 @@ public class Notes
         
         System.out.println(evens);
     }
+    
+    public static void iotaT50()
+    {
+        int[] list = new int[5];
+        for (int i = 0; i < 5; i++)
+        {
+            list[i] = (i + 1) * 10;
+        }
+    }
 }
