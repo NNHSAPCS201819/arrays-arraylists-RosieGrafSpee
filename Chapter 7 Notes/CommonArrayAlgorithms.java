@@ -64,10 +64,10 @@ public class CommonArrayAlgorithms
      */
     public static void printElementSeparators()
     {
-        String[] ranArr = new String[100];
+        int[] ranArr = createRandomArray(10, 10);
         for (int i = 0; i < ranArr.length; i++)
         {
-            System.out.println(array[i] + "|");
+            System.out.println(ranArr[i] + "|");
         }
     }
 
@@ -126,6 +126,14 @@ public class CommonArrayAlgorithms
     public static int[] copyArray()
     {
         return null;
+    }
+    
+    public static void thing()
+    {
+        int[] x = { 8, 4, 5, 21, 7, 9, 18, 2, 100};
+        System.out.println(x.length);
+        System.out.println(x[0]);
+        System.out.println(x[x.length-1]);
     }
 
 }
