@@ -133,7 +133,28 @@ public class CommonArrayAlgorithms
         int[] x = { 8, 4, 5, 21, 7, 9, 18, 2, 100};
         System.out.println(x.length);
         System.out.println(x[0]);
-        System.out.println(x[x.length-1]);
+        System.out.println(x[x.length-1]);  
+        for (int i = 0; i < x.length; i++)
+        {
+            System.out.print(x[i] + " ");
+        }
+        
+        System.out.println("");
+        for (int i = 0; i < x.length; i++)
+        {
+            System.out.print(i + ": " + x[i] + " ");
+        }
+        
+        System.out.println("");
+        for (int i = x.length - 1; i > -1; i--)
+        {
+            System.out.print(i + ": " + x[i] + " ");
+        }
+        
+        for (int i : x)
+        {
+            System.out.println(i);
+        }
     }
 
 }
