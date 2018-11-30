@@ -19,9 +19,12 @@ public class ArrayMethods
    }
    public void shiftRight()
    {
-      for (int i = 0; i < values.length; i++)
-          
+      int temp = this.values[values.length - 1];
+      for (int i = values.length - 1; i > 0; i--)
+      {
+          this.values[i] = this.values[i-1];
       }
+      this.values[0] = temp;
    }
 
    public static void main( String[] args )
