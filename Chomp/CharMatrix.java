@@ -2,78 +2,108 @@
 
 public class CharMatrix
 {
-  // Instance variables:
+    // Instance variables:
+    
+    // Constructor: creates a grid with dimensions rows, cols,
+    // and fills it with spaces
+    char grid[][];
+    public CharMatrix(int rows, int cols)
+    {
+        this(rows, cols, ' ');  
+    }
 
-  // Constructor: creates a grid with dimensions rows, cols,
-  // and fills it with spaces
-  public CharMatrix(int rows, int cols)
-  {
-    ...
-  }
+    // Constructor: creates a grid with dimensions rows , cols ,
+    // and fills it with the fill  character
+    public CharMatrix(int rows, int cols, char fill)
+    {
+        this.grid = new char[rows][cols];
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                grid[i][j] = fill;
+            }
+        }
+    }
 
-  // Constructor: creates a grid with dimensions rows , cols ,
-  // and fills it with the fill  character
-  public CharMatrix(int rows, int cols, char fill)
-  {
-    ...
-  }
+    // Returns the number of rows in grid
+    public int numRows()
+    {
+        return this.grid.length;
+    }
 
-  // Returns the number of rows in grid
-  public int numRows()
-  {
-    ...
-  }
+    // Returns the number of columns in grid
+    public int numCols()
+    {
+        return this.grid[0].length;
+    }
 
-  // Returns the number of columns in grid
-  public int numCols()
-  {
-    ...
-  }
+    // Returns the character at row, col location
+    public char charAt(int row, int col)
+    {
+        return this.grid[row][col];
+    }
 
-  // Returns the character at row, col location
-  public char charAt(int row, int col)
-  {
-    ...
-  }
+    // Sets the character at row, col location to ch
+    public void setCharAt(int row, int col, char ch)
+    {
+        this.grid[row][col] = ch;
+    }
 
-  // Sets the character at row, col location to ch
-  public void setCharAt(int row, int col, char ch)
-  {
-    ...
-  }
+    // Returns true if the character at row, col is a space,
+    // false otherwise
+    public boolean isEmpty(int row, int col)
+    {
+      return this.grid[row][col] == ' ';
+    }
 
-  // Returns true if the character at row, col is a space,
-  // false otherwise
-  public boolean isEmpty(int row, int col)
-  {
-    ...
-  }
+    // Fills the given rectangle with fill  characters.
+    // row0, col0 is the upper left corner and row1, col1 is the
+    // lower right corner of the rectangle.
+    public void fillRect(int row0, int col0, int row1, int col1, char fill)
+    {
+        for (int i = row0; i < row1 + 1; i++)
+        {
+            for (int j = col0; j < col1 + 1; j++)
+            {
+                grid[i][j] = fill;
+            }
+        }
+    }
 
-  // Fills the given rectangle with fill  characters.
-  // row0, col0 is the upper left corner and row1, col1 is the
-  // lower right corner of the rectangle.
-  public void fillRect(int row0, int col0, int row1, int col1, char fill)
-  {
-    ...
-  }
+    // Fills the given rectangle with SPACE characters.
+    // row0, col0 is the upper left corner and row1, col1 is the
+    // lower right corner of the rectangle.
+    public void clearRect(int row0, int col0, int row1, int col1)
+    {
+        for (int i = row0; i < row1 + 1; i++)
+        {
+            for (int j = col0; j < col1 + 1; j++)
+            {
+                grid[i][j] = ' ';
+            }
+        }
+    }
 
-  // Fills the given rectangle with SPACE characters.
-  // row0, col0 is the upper left corner and row1, col1 is the
-  // lower right corner of the rectangle.
-  public void clearRect(int row0, int col0, int row1, int col1)
-  {
-    ...
-  }
-
-  // Returns the count of all non-space characters in row 
-  public int countInRow(int row)
-  {
-    ...
-  }
-
-  // Returns the count of all non-space characters in col 
-  public int countInCol(int col)
-  {
-    ...
-  }
+    // Returns the count of all non-space characters in row 
+    public int countInRow(int row)
+    {
+        int res = 0;
+        for (int i = 0; i < grid[row].length; i++)
+        {
+            res += grid[row][i] == ' ' ? 0 : 1;
+        }
+        return res;
+    }
+    
+    // Returns the count of all non-space characters in col 
+    public int countInCol(int col)
+    {
+        int res = 0;
+        for (int i = 0; i < grid.length; i++)
+        {
+            res += grid[i][col] == ' ' ? 0 : 1;
+        }
+        return res;
+    }
 }
