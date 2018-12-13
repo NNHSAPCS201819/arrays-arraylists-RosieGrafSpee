@@ -33,13 +33,9 @@ public class Radar
     public Radar(int rows, int cols)
     {
         // initialize the currentScan 2D array and the accumulator 2D array
-        
-        
-        //
-        // !!! add code here !!!
-        //
-        
-        
+        currentScan = new boolean[rows][cols];
+        accumulator = new int[rows][cols];
+       
         // randomly set the location of the monster (can be explicity set through the
         //  setMonsterLocation method for the unit test
         int row = (int)(Math.random() * rows);
@@ -56,6 +52,13 @@ public class Radar
      */
     public void scan()
     {
+        for (int i = 0; i < currentScan.length; i++)
+        {
+            for (int j = 0; j < currentScan[i].length; j++)
+            {
+                
+            }
+        }
         // algorithm for performing a scan:
         //    1. set all cells in the currentScan 2D array to false
         //    2. set the location of the monster in the currentScan 2D array
@@ -116,9 +119,7 @@ public class Radar
      */
     public Location findMonster()
     {
-        //
-        // !!! add code here !!!
-        //
+        
     }
     
     /**
@@ -176,12 +177,16 @@ public class Radar
         // detected as a false positive or false negative. You must handle the cell containing the monster as a
         // special case since, if noise is being injected into that cell, that is a false negative and the cell must
         // be set to false.
-        
-        
-        //
-        // !!! add code here !!!
-        //
-        
+        for (int i = 0; i < currentScan.length; i++)
+        {
+            for (int j = 0; j < currentScan[i].length; j++)
+            {
+                if (2 * Math.random() == 0)
+                {
+                    currentScan[i][j] = !currentScan[i][j];
+                }
+            }
+        }
         
     }
     
