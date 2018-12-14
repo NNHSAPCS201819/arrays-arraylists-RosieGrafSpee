@@ -27,11 +27,11 @@ public class Location
      */
     public int getRow()
     {
-        return this.y;
+        return this.x;
     }
     
     public int getCol()
     {
-        return this.x;
+        return this.y;
     }
 }

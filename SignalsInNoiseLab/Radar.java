@@ -56,22 +56,22 @@ public class Radar
         {
             for (int j = 0; j < currentScan[i].length; j++)
             {
-                
+                currentScan[i][j] = false;
             }
         }
-        // algorithm for performing a scan:
-        //    1. set all cells in the currentScan 2D array to false
-        //    2. set the location of the monster in the currentScan 2D array
-        //    3. inject noise into the grid by invoking the injectNoise method
-        //    4. update the accumulator 2D array based on the state of the currentScan 2D array
-        //    5. increment the numScans instance variable
         
+        this.setMonsterLocation(monsterLocation);
+        this.injectNoise();
         
-        //
-        // !!! add code here !!!
-        //
+        for (int i = 0; i < currentScan.length; i++)
+        {
+            for (int j = 0; j < currentScan[i].length; j++)
+            {
+                accumulator[i][j] = currentScan[i][j] ? 1 : 0;
+            }
+        }
         
-        
+        numScans++;
     }
 
     /**
@@ -119,9 +119,25 @@ public class Radar
      */
     public Location findMonster()
     {
+        int max = 0; 
+        int x = 0; int y = 0;
+        for (int i = 0; i < 80; i++)
+        {
+            for (int j = 0; j < currentScan.length; j++)
+            {
+                for (int k = 0; k < currentScan[j].length; k++)
+                {
+                    if (accumulator[j][k] > max)
+                    {
+                        max = accumulator[j][k];
+                        x = j; y = k;
+                    }
+                }
+            }
+        }
         
+        return new Location(x, y);
     }
-    
     /**
      * Returns the number of times that the specified location in the radar grid has triggered a
      *  detection since the constructor of the radar object.
@@ -181,7 +197,7 @@ public class Radar
         {
             for (int j = 0; j < currentScan[i].length; j++)
             {
-                if (2 * Math.random() == 0)
+                if (9 * Math.random() == 0)
                 {
                     currentScan[i][j] = !currentScan[i][j];
                 }
