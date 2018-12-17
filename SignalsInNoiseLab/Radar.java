@@ -66,7 +66,7 @@ public class Radar
         {
             for (int j = 0; j < currentScan[i].length; j++)
             {
-                accumulator[i][j] = currentScan[i][j] ? 1 : 0;
+                accumulator[i][j] += currentScan[i][j] ? 1 : 0;
             }
         }
         
@@ -134,6 +134,7 @@ public class Radar
         
         return new Location(x, y);
     }
+    
     /**
      * Returns the number of times that the specified location in the radar grid has triggered a
      *  detection since the constructor of the radar object.

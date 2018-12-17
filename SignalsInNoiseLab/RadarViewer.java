@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  * Class that contains the main method for the program and creates the frame containing the component.
@@ -7,7 +8,7 @@ import java.util.Scanner;
  * @author @gcschmit
  * @version 19 July 2014
  */
-public class RadarViewer
+public class RadarViewer extends 
 {
     /**
      * main method for the program which creates and configures the frame for the program
@@ -26,8 +27,22 @@ public class RadarViewer
         
         
         System.out.print("Please enter the x- and y-coordinates of the monster for testing, if you wish: ");
+        Random rand = new Random();
         Scanner locat = new Scanner(System.in);
-        int x = locat.nextInt(); int y = locat.nextInt();
+        
+        int x, y;
+        String a = locat.nextLine();
+        
+        Scanner intLoc = new Scanner(a);
+        if (!a.isEmpty())
+        {
+            x = locat.nextInt(); y = locat.nextInt();
+        }
+        
+        else
+        {
+            x = (int)rand.nextInt(100); y = rand.nextInt(100);
+        }
         
         radar.setMonsterLocation(new Location(x, y));
         

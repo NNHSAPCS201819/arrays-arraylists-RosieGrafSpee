@@ -11,7 +11,7 @@ import javax.swing.JComponent;
  * @author @gcschmit
  * @version 19 July 2014
  */
-public class RadarComponent extends JComponent
+public class RadarComponent
 {
     static final int CELL_WIDTH_IN_PIXELS = 5;
     static final int CELL_HEIGHT_IN_PIXELS = 5;
