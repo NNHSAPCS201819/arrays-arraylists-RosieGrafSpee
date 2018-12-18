@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Location extends RadarViewer
+public class Location
 {
     // instance variables - replace the example below with your own
     private int x, y;

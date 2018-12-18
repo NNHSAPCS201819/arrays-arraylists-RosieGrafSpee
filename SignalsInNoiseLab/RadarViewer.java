@@ -8,7 +8,7 @@ import java.util.Random;
  * @author @gcschmit
  * @version 19 July 2014
  */
-public class RadarViewer extends 
+public class RadarViewer
 {
     /**
      * main method for the program which creates and configures the frame for the program
@@ -36,7 +36,7 @@ public class RadarViewer extends
         Scanner intLoc = new Scanner(a);
         if (!a.isEmpty())
         {
-            x = locat.nextInt(); y = locat.nextInt();
+            x = intLoc.nextInt(); y = intLoc.nextInt();
         }
         
         else

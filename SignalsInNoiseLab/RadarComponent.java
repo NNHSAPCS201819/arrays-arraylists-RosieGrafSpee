@@ -11,7 +11,7 @@ import javax.swing.JComponent;
  * @author @gcschmit
  * @version 19 July 2014
  */
-public class RadarComponent
+public class RadarComponent extends JComponent
 {
     static final int CELL_WIDTH_IN_PIXELS = 5;
     static final int CELL_HEIGHT_IN_PIXELS = 5;
@@ -54,7 +54,7 @@ public class RadarComponent
      * @param    g    the graphics object to be used for all graphics operations
      * 
      */
-    @Override
+    
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;

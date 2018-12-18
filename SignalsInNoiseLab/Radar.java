@@ -60,6 +60,7 @@ public class Radar
             }
         }
         
+        currentScan[this.monsterLocation.getRow()][this.monsterLocation.getCol()] = true;
         this.injectNoise();
         
         for (int i = 0; i < currentScan.length; i++)
